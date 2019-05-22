@@ -1,0 +1,8 @@
+<ng-container *ngIf="user$ | async as user; else loggedOut">
+  <span>{{ user.displayName }}</span>
+  <img class="user-photo" src="{{ user.photoURL }}">
+  <a (click)="logout()">Logout</a>
+</ng-container>
+<ng-template #loggedOut>
+  <a (click)="login()">Login</a>
+</ng-template>
